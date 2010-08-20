@@ -1,7 +1,7 @@
 var mongoose = require('mongoose').Mongoose;
 var sys = require('sys');
 
-mongoose.model('Category', {
+mongoose.model('User', {
 
     properties: ['name', 'updated_at'],
 
