@@ -4,8 +4,8 @@ var sys = require('sys');
 var db = new mongo.Db('node-mongo-8LU', new mongo.Server('localhost', 27017, {}), {});
 
 db.open(function(err, db) {
-  db.collection('records', function(err, collection) {
-    
+	db.collection('records', function(err, collection) {
+		
     // Remove all existing documents in collection
     collection.remove(function(err, collection) {
       
