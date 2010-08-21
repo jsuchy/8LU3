@@ -1,11 +1,12 @@
 var mongo = require('mongodb');
 var sys = require('sys');
 
-var db = new mongo.Db('node-mongo-8LU', new mongo.Server('localhost', 27017, {}), {});
+var db = new mongo.Db('node-mongo-examples', new mongo.Server('localhost', 27017, {}), {});
 
 db.open(function(err, db) {
-	db.collection('records', function(err, collection) {
+	db.collection('test', function(err, collection) {
 		
+		sys.puts(sys.inspect(collection));
     // Remove all existing documents in collection
     collection.remove(function(err, collection) {
       
@@ -15,7 +16,7 @@ db.open(function(err, db) {
 					"name": "user" + i,
 					"data": "some data"
 				}
-        collection.insert(doc);
+        collection.insert(user);
       }
 			
 			// Inspect records
